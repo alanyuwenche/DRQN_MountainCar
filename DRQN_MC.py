@@ -31,14 +31,14 @@ class Q_net(nn.Module):
         self.lstm    = nn.LSTM(self.hidden_space,self.hidden_space, batch_first=True)
         self.Linear2 = nn.Linear(self.hidden_space, self.action_space)
 
-        nn.init.uniform_(self.Linear1.weight)
-        nn.init.constant_(self.Linear1.bias, 0.)
-        nn.init.xavier_uniform_(self.lstm.weight_ih_l0)
-        nn.init.constant_(self.lstm.bias_ih_l0, 0.)
-        nn.init.xavier_uniform_(self.lstm.weight_hh_l0)
-        nn.init.constant_(self.lstm.bias_hh_l0, 0.)
-        nn.init.uniform_(self.Linear2.weight)
-        nn.init.constant_(self.Linear2.bias, 0.)
+        #nn.init.uniform_(self.Linear1.weight)
+        #nn.init.constant_(self.Linear1.bias, 0.)
+        #nn.init.xavier_uniform_(self.lstm.weight_ih_l0)
+        #nn.init.constant_(self.lstm.bias_ih_l0, 0.)
+        #nn.init.xavier_uniform_(self.lstm.weight_hh_l0)
+        #nn.init.constant_(self.lstm.bias_hh_l0, 0.)
+        #nn.init.uniform_(self.Linear2.weight)
+        #nn.init.constant_(self.Linear2.bias, 0.)
 
     def forward(self, x, h, c):
         x = F.relu(self.Linear1(x))
